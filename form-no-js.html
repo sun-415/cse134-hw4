@@ -43,7 +43,7 @@
                 <input type="text" id="name" name="name" pattern="[A-Za-z]*" required>
 
                 <output class="error" id="name-error">Name error message.</output>
-                <output class="info" id="name-info">Enter your name. Make sure the input for the name contains only alphabetical characters.</output>
+                <output class="info" id="name-info">Enter your name. Alphabetical characters only.</output>
             </form-field>
             
             <form-field>
@@ -51,7 +51,7 @@
                 <input type="email" id="email" name="email" required>
 
                 <output class="error" id="email-error">Email error message.</output>
-                <output class="info" id="email-info">Enter your email. Make sure the input matches the format for an email address.</output>
+                <output class="info" id="email-info">Enter your email.</output>
             </form-field>
 
             <form-field>
@@ -59,7 +59,7 @@
                 <input type="text" id="subject" name="subject" minlength="5" maxlength="20" required>
 
                 <output class="error" id="subject-error">Subject error message</output>
-                <output class="info" id="subject-info">Enter the subject. The max length for the subject is 20 characters.</output>
+                <output class="info" id="subject-info">Enter the subject. Minimum number of characters is 5.</output>
             </form-field>
 
             <form-field>
@@ -67,12 +67,14 @@
                 <textarea id="message" name="message" cols="60" minlength="10"  maxlength="300"></textarea>
 
                 <output class="error" id="message-error">Message error message.</output>
-                <output class="info" id="message-info">Send a message! The max length for the message is 300 characters.</output>
+                <output class="info" id="message-info">Send a message! Minimum number of characters is 10.</output>
             </form-field>
 
             <input type="hidden" id="possible_bot" name="possible_bot" value="true">
 
             <input type="submit">
+
+            <p>* indicates required</p>
         </form>
     </main>
 
