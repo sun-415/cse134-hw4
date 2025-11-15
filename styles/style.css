@@ -9,10 +9,13 @@
     --forest-green5: #111D13; /* font */
     --error-color: #b00020;
 
-    --dur-1: 150ms;
     --dur-2: 300ms;
-    --dur-3: 600ms;
     --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+@keyframes flash {
+    from { background-color: #ffe9ed; }
+    to { background-color: white; }
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -413,7 +416,7 @@ header {
 }
 
 /* Layout for contact page */
-#contact-form {
+#contact-form-body {
     margin: 6rem;
     
     h1 {
@@ -433,7 +436,7 @@ header {
     }
 
     /* inputs & textarea share the same look */
-    input[type="text"], input[type="email"], textarea {
+    input, textarea {
         width: 100%;
         padding: 0.7rem 1rem;
         border-radius: 12px;
@@ -454,24 +457,14 @@ header {
         box-shadow: 0 0 0 3px rgba(63,66,56,.15);
     }
 
-    form-field:has(:invalid) > label::after {
+    /* asterisk appears if field is invalid, but goes away after valid input */
+    :has(:invalid) > label::after {
         content: " *";
         color: var(--error-color, red);
         font-weight: 700;
     }
 
-    .error, .info {
-        color: grey;
-        font-size: 0.8rem;
-        margin-top: 0.2rem;
-        line-height: 0.8rem;
-    }
-
-    .error {
-        color: var(--error-color, red);
-    }
-
-    input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown) {
+    input:user-invalid, textarea:user-invalid {
         border-color: var(--error-color, red);
         background-color: #ffe9ed;
     }
@@ -481,7 +474,32 @@ header {
         background: rgba(0,0,0,.05);
     }
 
-    input[type="submit"] {
+    output {
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+        line-height: 0.8rem;
+    }
+    
+    input.flash {
+        animation: flash 0.3s alternate 2;
+    }
+
+    .error {
+        color: var(--error-color, red);
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    .error.hidden {
+        opacity: 0;
+    }
+
+    .info {
+        color: grey;
+    }
+
+
+    button[type="submit"] {
         align-self: center;  
         margin-top: 0.8rem;
         padding: 0.9rem 2.5rem;
@@ -494,10 +512,12 @@ header {
         font-family: inherit;
     }
 
-    input[type="submit"]:hover {
+    button[type="submit"]:hover {
         filter: brightness(1.2);
     }
 }
+
+
 
 
 footer {
