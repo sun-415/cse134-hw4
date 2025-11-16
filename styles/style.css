@@ -538,9 +538,6 @@ header {
     }
 }
 
-
-
-
 footer {
     width: 100%;
     display: flex;
@@ -606,6 +603,11 @@ footer {
                 li {
                     margin: 0rem 0.3rem;
                 } 
+            }
+
+            /* using filter to change the color of the .svg images */
+            .socials {
+                filter: brightness(88%) invert(90%) sepia(10%) saturate(200%) hue-rotate(10deg) contrast(85%);
             }
         }
     }
