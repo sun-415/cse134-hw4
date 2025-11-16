@@ -495,28 +495,24 @@ header {
         opacity: 0;
     }
 
-    /* #subject-error, #message-error {
-        opacity: 1;
-    } */
-
     /* Base state: faint, low emphasis */
-    .len-limit-error {
-        opacity: 0.7;
-        font-weight: 300;
-        font-size: 0.7rem;
+    .len-limit {
+        opacity: 0.8;
+        font-size: 0.8rem;
         transition: opacity 0.3s ease, font-weight 0.3s ease;
     }
 
     /* Medium intensity when getting close */
-    .len-limit-error-medium {
-        opacity: 0.8 !important;
-        font-weight: 400 !important;
+    .len-limit-medium {
+        font-weight: 600 !important;
+        color: darkgray;
     }
 
     /* High intensity (danger zone) */
-    .len-limit-error-strong {
-        opacity: 1 !important;
-        font-weight: 500 !important;
+    .len-limit-strong {
+        opacity: 1;
+        font-weight: 700 !important;
+        color: rgb(54, 54, 54);
     }
 
     .info {

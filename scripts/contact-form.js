@@ -58,28 +58,27 @@ document.addEventListener("DOMContentLoaded", function () {
         let length = input.value.length;
         let charsLeft = max - length;
 
-        const errorOutput = document.getElementById(input.id + "-error");
+        const infoOutput = document.getElementById(input.id + "-info");
 
         // Always show countdown
-        errorOutput.textContent = `${charsLeft} characters remaining.`;
-        errorOutput.classList.remove("hidden");
+        infoOutput.textContent = `${charsLeft} characters remaining.`;
 
         // Remove previous styles
-        errorOutput.classList.remove("len-limit-error-medium", "len-limit-error-strong");
+        infoOutput.classList.remove("len-limit-error-medium", "len-limit-strong");
 
         // % of the limit used
         let percent = length / max;
 
         // Apply intensity based on how close they are
         if (percent >= 0.8) {
-            errorOutput.classList.add("len-limit-error-strong");   // red + bold
+            infoOutput.classList.add("len-limit-strong");   // red + bold
         } else if (percent >= 0.6) {
-            errorOutput.classList.add("len-limit-error-medium");   // darker + semi-bold
+            infoOutput.classList.add("len-limit-medium");   // darker + semi-bold
         }
 
         // Handle actual limit
         if (length >= max) {
-            errorOutput.textContent = "Maximum characters reached";
+            infoOutput.textContent = "Maximum characters reached";
         } 
     }
     

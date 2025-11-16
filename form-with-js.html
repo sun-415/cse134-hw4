@@ -59,16 +59,16 @@
                 <label for="subject">Subject:</label>
                 <input type="text" id="subject" name="subject" minlength="5" maxlength="25" placeholder="Subject" autocomplete="off" required>
 
-                <output class="info" id="subject-info">Enter the subject. Minimum number of characters is 5.</output>
-                <output class="error hidden len-limit-error" id="subject-error"></output>
+                <output class="info len-limit" id="subject-info">Enter the subject. Minimum number of characters is 5.</output>
+                <output class="error hidden" id="subject-error"></output>
             </form-field>
 
             <form-field>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" cols="60" minlength="5"  maxlength="300" placeholder="Tell me anything..." autocomplete="off" required></textarea>
 
-                <output class="info" id="message-info">Send a message! Minimum number of characters is 5.</output>
-                <output class="error hidden len-limit-error" id="message-error"></output>
+                <output class="info len-limit" id="message-info">Send a message! Minimum number of characters is 5.</output>
+                <output class="error hidden" id="message-error"></output>
             </form-field>
 
             <input type="hidden" id="possible_bot" name="possible_bot" value="true">
