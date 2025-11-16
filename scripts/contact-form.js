@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function enforceGmail(){
         // Validate with the built-in constraints
         emailInput.setCustomValidity("");
-        if (!emailInput.validity.valid) {
-            return;
+        if (!emailInput.checkValidity() && !emailInput.validity.valueMissing) {
+            showError(emailInput, "Please use @gmail.com address only.")
         }
 
         // Extend with a custom constraints

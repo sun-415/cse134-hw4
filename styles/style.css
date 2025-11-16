@@ -480,7 +480,8 @@ header {
         line-height: 0.8rem;
     }
     
-    input.flash {
+    /* I only want the flash for the name field*/
+    input#name.flash {
         animation: flash 0.3s alternate 2;
     }
 
