@@ -12,11 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
         errorOutput.textContent = message;
         errorOutput.classList.remove("hidden");
         input.classList.add("flash");
-
-        console.log(`${input.classList}, ${errorOutput.classList}`);
     
         setTimeout(() => {
-            console.log(`${input.classList}, ${errorOutput.classList}`);
             errorOutput.classList.add("hidden");
             input.classList.remove("flash");
         }, 2000);
