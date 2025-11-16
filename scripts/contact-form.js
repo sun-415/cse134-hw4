@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const messageInput = document.getElementById("message");
     
     // Allowed character regex for name
-    const allowedChars= /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
+    const allowedChars = /^(?=.*[A-Za-z])[A-Za-z\s]*$/;
     
     function showError(input, message){
         const errorOutput = document.getElementById(input.id + "-error");
