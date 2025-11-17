@@ -41,6 +41,26 @@
     --ease: cubic-bezier(.2,.7,.2,1);
 }
 
+:root[data-theme="beige"] {
+    --bg: #F3EEDC;               
+    --nav-footer-bg: #B3A089;  
+    --nav-footer-content: #FDFBF4;
+    --text: #463F36;           
+    --proj-card-bg: #E4D9C5;    
+    --text-bubble: #F7F3E8;   
+    --shadow: rgba(130, 112, 90, 0.20);
+    --field-bg: #F9F5EA;     
+    --field-border: rgba(130, 112, 90, 0.25);
+    --field-valid: #F0E9D9;      
+    --field-invalid: #DFC8C4;
+    --submit-button: #B7A384;  
+    --submit-text: #FDFBF4;
+    --error-color: #B6726A; 
+
+    --dur-2: 300ms;
+    --ease: cubic-bezier(.2,.7,.2,1);
+}
+
 @keyframes flash {
     from { background-color: #ffe9ed; }
     to { background-color: white; }
@@ -343,6 +363,10 @@ html[data-theme="light"] theme-toggle {
 
 html[data-theme="dark"] theme-toggle {
     background-color: #53584d; 
+}
+
+html[data-theme="beige"] theme-toggle {
+    background-color: #e2dccf; 
 }
 
 /* Hide the toggle if JS is off */
@@ -671,7 +695,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     background-color: var(--nav-footer-bg, grey);
-    color: var(--nav-footer-content);
+    color: var(--nav-footer-content, white);
     font-size: 0.9rem;
 
     div {
@@ -733,7 +757,7 @@ footer {
 
             /* using filter to change the color of the .svg images */
             .socials {
-                filter: brightness(88%) invert(90%) sepia(10%) saturate(200%) hue-rotate(10deg) contrast(85%);
+                filter: brightness(150%) invert(100%) sepia(0%) saturate(100%) contrast(110%);
             }
         }
     }
